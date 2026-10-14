@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<misioak>
+    <!-- ===== MISIOA 1: Mendiko erreskatea ====== -->
+    <misioa id="M01">
+        <izena>Mendiko erreskatea</izena>
+        <erreskateTaldeak>
+            <erreskateTaldea id="ET01">
+                <izena>Alfa</izena>
+                <mota>HELIKOPTEROA</mota>
+                <koordenatua>
+                    <latitude>43.1840</latitude>
+                    <longitude>-2.4710</longitude>
+                </koordenatua>
+            </erreskateTaldea>
+            <erreskateTaldea id="ET02">
+                <izena>Bravo</izena>
+                <mota>ANBULANTZIA</mota>
+                <koordenatua>
+                    <latitude>43.2030</latitude>
+                    <longitude>-2.5020</longitude>
+                </koordenatua>
+            </erreskateTaldea>
+        </erreskateTaldeak>
+        <larrialdiak>
+            <larrialdia id="L01">
+                <izena>Mendiko istripua</izena>
+                <larritasuna>ALTUA</larritasuna>
+                <koordenatua>
+                    <latitude>43.1430</latitude>
+                    <longitude>-2.3750</longitude>
+                </koordenatua>
+            </larrialdia>
+            <larrialdia id="L02">
+                <izena>Txirrindulari zauritua</izena>
+                <larritasuna>ERTAINA</larritasuna>
+                <koordenatua>
+                    <latitude>43.1750</latitude>
+                    <longitude>-2.4200</longitude>
+                </koordenatua>
+            </larrialdia>
+        </larrialdiak>
+        <arriskuEremuak>
+            <arriskuEremua id="AE01">
+                <izena>Uholde eremua</izena>
+                <mota>UHOLDEA</mota>
+                <koordenatuak>
+                    <koordenatua>
+                        <latitude>43.1300</latitude>
+                        <longitude>-2.4500</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.2000</latitude>
+                        <longitude>-2.4500</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.2000</latitude>
+                        <longitude>-2.3500</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.1300</latitude>
+                        <longitude>-2.3500</longitude>
+                    </koordenatua>
+                </koordenatuak>
+            </arriskuEremua>
+        </arriskuEremuak>
+    </misioa>
+    <!-- ===== MISIOA 2: Kostaldeko erreskatea ===== -->
+    <misioa id="M02">
+        <izena>Kostaldeko erreskatea</izena>
+        <erreskateTaldeak>
+            <erreskateTaldea id="ET03">
+                <izena>Charlie</izena>
+                <mota>HELIKOPTEROA</mota>
+                <koordenatua>
+                    <latitude>43.3183</latitude>
+                    <longitude>-1.9812</longitude>
+                </koordenatua>
+            </erreskateTaldea>
+            <erreskateTaldea id="ET04">
+                <izena>Delta</izena>
+                <mota>ITSASONTZIA</mota>
+                <koordenatua>
+                    <latitude>43.3400</latitude>
+                    <longitude>-1.9300</longitude>
+                </koordenatua>
+            </erreskateTaldea>
+        </erreskateTaldeak>
+        <larrialdiak>
+            <larrialdia id="L03">
+                <izena>Itsasoko larrialdia</izena>
+                <larritasuna>ALTUA</larritasuna>
+                <koordenatua>
+                    <latitude>43.3700</latitude>
+                    <longitude>-1.9500</longitude>
+                </koordenatua>
+            </larrialdia>
+            <larrialdia id="L04">
+                <izena>Itsasontzi matxuratua</izena>
+                <larritasuna>ERTAINA</larritasuna>
+                <koordenatua>
+                    <latitude>43.3500</latitude>
+                    <longitude>-2.0200</longitude>
+                </koordenatua>
+            </larrialdia>
+        </larrialdiak>
+        <arriskuEremuak>
+            <arriskuEremua id="AE02">
+                <izena>Ekaitz eremua</izena>
+                <mota>EKAITZA</mota>
+                <koordenatuak>
+                    <koordenatua>
+                        <latitude>43.3000</latitude>
+                        <longitude>-2.0500</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.4000</latitude>
+                        <longitude>-2.0500</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.4000</latitude>
+                        <longitude>-1.9000</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.3000</latitude>
+                        <longitude>-1.9000</longitude>
+                    </koordenatua>
+                </koordenatuak>
+            </arriskuEremua>
+        </arriskuEremuak>
+    </misioa>
+    <!-- ===== MISIOA 3: Basoko erreskatea ===== -->
+    <misioa id="M03">
+        <izena>Basoko erreskatea</izena>
+        <erreskateTaldeak>
+            <erreskateTaldea id="ET05">
+                <izena>Echo</izena>
+                <mota>SUHILTZAILEAK</mota>
+                <koordenatua>
+                    <latitude>43.0500</latitude>
+                    <longitude>-2.6000</longitude>
+                </koordenatua>
+            </erreskateTaldea>
+            <erreskateTaldea id="ET06">
+                <izena>Foxtrot</izena>
+                <mota>HELIKOPTEROA</mota>
+                <koordenatua>
+                    <latitude>43.1000</latitude>
+                    <longitude>-2.5500</longitude>
+                </koordenatua>
+            </erreskateTaldea>
+        </erreskateTaldeak>
+        <larrialdiak>
+            <larrialdia id="L05">
+                <izena>Basoko sutea</izena>
+                <larritasuna>ALTUA</larritasuna>
+                <koordenatua>
+                    <latitude>43.0800</latitude>
+                    <longitude>-2.5800</longitude>
+                </koordenatua>
+            </larrialdia>
+            <larrialdia id="L06">
+                <izena>Mendizale galdua</izena>
+                <larritasuna>ERTAINA</larritasuna>
+                <koordenatua>
+                    <latitude>43.1200</latitude>
+                    <longitude>-2.6200</longitude>
+                </koordenatua>
+            </larrialdia>
+        </larrialdiak>
+        <arriskuEremuak>
+            <arriskuEremua id="AE03">
+                <izena>Sute eremua</izena>
+                <mota>SUTEA</mota>
+                <koordenatuak>
+                    <koordenatua>
+                        <latitude>43.0500</latitude>
+                        <longitude>-2.6200</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.1100</latitude>
+                        <longitude>-2.6200</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.1100</latitude>
+                        <longitude>-2.5400</longitude>
+                    </koordenatua>
+                    <koordenatua>
+                        <latitude>43.0500</latitude>
+                        <longitude>-2.5400</longitude>
+                    </koordenatua>
+                </koordenatuak>
+            </arriskuEremua>
+        </arriskuEremuak>
+    </misioa>
+</misioak>
