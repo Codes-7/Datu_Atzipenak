@@ -3,12 +3,14 @@ package paagbi.controller;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
 import jakarta.json.Json;
 import jakarta.json.JsonArray;
 import jakarta.json.JsonArrayBuilder;
+import jakarta.json.JsonException;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
 import jakarta.json.JsonValue;
@@ -19,12 +21,19 @@ import paagbi.model.Kokalekua;
 import paagbi.model.Puntuazioa;
 import paagbi.repository.XmlKudeatzailea;
 
+/**
+ * Jokoaren logika nagusia kudeatzen duen kontrolatzailea.
+ *
+ * XML fitxategitik datuak kargatzen ditu eta jokoareneragiketa desberdinak eskaintzen ditu.
+ *
+ * @author Maider Santesteban
+ */
 public class JokoaController {
 
     private Jokoa jokoa;
 
     /**
-     * 
+     * Jokoaren datuak XML fitxategitik kargatzen ditu eta kontrolatzailea prestatzen du.
      */
     public JokoaController() {
         XmlKudeatzailea xml = new XmlKudeatzailea();
@@ -32,16 +41,20 @@ public class JokoaController {
     }
 
     /**
-     * 
-     * @return
+     * Jokoan erabilgarri dauden kokaleku guztiak itzultzen ditu.
+     *
+     * @return kokalekuen zerrenda
      */
     public List<Kokalekua> getKokalekuak() {
         return jokoa.getKokalekuak();
     }
 
     /**
-     * Elije un sitio de manera aleatoria.
-     * @return
+     * Jokoan erabiliko den ausazko kokaleku bat aukeratzen du.
+     *
+     * Kokalekuen zerrendatik elementu bat ausaz hautatzen da. Kokalekurik ez badago, null itzultzen da.
+     *
+     * @return ausaz aukeratutako kokalekua edo null zerrenda hutsik badago
      */
     public Kokalekua ausazkoKokalekua() {
         //Comprobamos que la lista no está vacía.
@@ -56,10 +69,11 @@ public class JokoaController {
     }
 
     /**
-     * 
-     * @param zuzena
-     * @param erantzuna
-     * @return
+     * Erabiltzailearen erantzuna zuzena den egiaztatzen du.
+     *
+     * @param zuzena kokaleku zuzena
+     * @param erantzuna erabiltzailearen erantzuna
+     * @return true erantzuna zuzena bada, false bestela
      */
     public boolean egiaztatuErantzuna(Kokalekua zuzena, String erantzuna) {
         boolean zuzenaDa = zuzena.getIzena().equalsIgnoreCase(erantzuna);
@@ -90,10 +104,10 @@ public class JokoaController {
     }
 
     /**
-     * 
-     * 
-     * @param kokalekua
-     * @return
+     * Emandako kokalekutik hurbilen dagoen beste kokalekua bilatzen du.
+     *
+     * @param kokalekua erreferentziazko kokalekua
+     * @return hurbilen dagoen kokalekua
      */
     public Kokalekua hurbilenDagoenaBilatu(Kokalekua kokalekua) {
         //Comprobamos que la lista no esté vacía.
@@ -118,11 +132,11 @@ public class JokoaController {
     }
 
     /**
-     * 
-     * 
-     * @param k
-     * @param eremua
-     * @return
+     * Kokaleku bat arrisku eremu baten barruan dagoen egiaztatzen du.
+     *
+     * @param k egiaztatu beharreko kokalekua
+     * @param eremua arrisku eremua
+     * @return true barruan badago, false bestela
      */
     public boolean arriskuEremuanDago(Kokalekua k, ArriskuEremua eremua) {
         double latitude = k.getKoordenatua().getLatitude();
@@ -137,6 +151,11 @@ public class JokoaController {
         return false;
     }
 
+    /**
+     * Jokoan erabilgarri dagoen lehen arrisku eremua itzultzen du.
+     *
+     * @return arrisku eremua edo null ez badago
+     */
     public ArriskuEremua getArriskuEremua() {
 
         if (jokoa.getArriskuEremuak() == null
@@ -147,7 +166,14 @@ public class JokoaController {
         return jokoa.getArriskuEremuak().get(0);
     }
 
-   public void jsoneraEsportatu(Puntuazioa puntuazioa) {
+    /**
+     * Jokalariaren puntuazioa JSON fitxategi batera esportatzen du.
+     *
+     * Puntuazio berria lehendik dauden erregistroei gehitzen zaie.
+     *
+     * @param puntuazioa esportatu beharreko puntuazioa
+     */
+    public void jsoneraEsportatu(Puntuazioa puntuazioa) {
         File fitxategia = new File("koordenadak/src/main/resources/json/puntuazioa.json");
         JsonObject puntuazioBerria = Json.createObjectBuilder()
             .add("jokalaria", puntuazioa.getJokalaria())
@@ -171,8 +197,11 @@ public class JokoaController {
                 writer.writeArray(arrayBerria);
             }
             System.out.println("JSON fitxategia eguneratu da.");
-        } catch (Exception e) {
-            System.err.println("Errorea JSON esportatzean.");
+        } catch (IOException e) {
+            System.err.println("Errorea fitxategia irakurtzean edo idaztean.");
+            e.printStackTrace();
+        } catch (JsonException e) {
+            System.err.println("Errorea JSON formatua prozesatzean.");
             e.printStackTrace();
         }
     }

@@ -11,6 +11,13 @@ import javax.swing.JTextField;
 
 import paagbi.controller.JokoaController;
 
+/**
+ * Aplikazioaren hasierako leihoa.
+ *
+ * Bertan jokalariaren izena sartzen da eta erabilgarri dauden hiru joko motetako bat aukeratzen da.
+ *
+ * @author Maider Santesteban
+ */
 public class HasieraView extends JFrame {
 
     private JTextField txtIzena;
@@ -18,6 +25,9 @@ public class HasieraView extends JFrame {
     private JButton btnHurbilena;
     private JButton btnArriskua;
 
+    /**
+     * Hasierako interfazea sortzen du eta osagai grafikoak prestatzen ditu.
+     */
     public HasieraView() {
         //Ajustes generales
         setTitle("Koordenatuen Erronka");
@@ -43,18 +53,18 @@ public class HasieraView extends JFrame {
         //Botones de los juegos
         btnKoordenatuak = new JButton("Koordenatuak asmatu");
         btnKoordenatuak.setBounds(20, 170, 180, 40);
-        btnKoordenatuak.setBackground(new Color(0, 153, 76));
-        btnKoordenatuak.setForeground(Color.WHITE);
+        btnKoordenatuak.setBackground(new Color(135, 206, 235));
+        btnKoordenatuak.setForeground(new Color(50,50,50));
 
         btnHurbilena = new JButton("Hurbilen dagoena bilatu");
         btnHurbilena.setBounds(210, 170, 180, 40);
-        btnHurbilena.setBackground(new Color(0, 153, 76));
-        btnHurbilena.setForeground(Color.WHITE);
+        btnHurbilena.setBackground(new Color(135, 206, 235));
+        btnHurbilena.setForeground(new Color(50,50,50));
 
         btnArriskua = new JButton("Arriskua kalkulatu");
         btnArriskua.setBounds(400, 170, 180, 40);
-        btnArriskua.setBackground(new Color(0, 153, 76));
-        btnArriskua.setForeground(Color.WHITE);
+        btnArriskua.setBackground(new Color(135, 206, 235));
+        btnArriskua.setForeground(new Color(50,50,50));
 
         //Añadir los elementos al panel
         panel.add(lblTitulo);

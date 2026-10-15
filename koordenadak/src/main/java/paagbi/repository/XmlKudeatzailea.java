@@ -7,12 +7,22 @@ import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
 import paagbi.model.Jokoa;
 
+/**
+ * XML fitxategiko datuen kudeaketa egiten duen klasea.
+ *
+ * JAXB teknologia erabiliz jokoaren datuak irakurri eta
+ * Java objektuetara bihurtzen ditu.
+ *
+ * @author Maider Santesteban
+ */
 public class XmlKudeatzailea {
 
     /**
-     * XML fitxategitik jokoaren datuak kargatzen ditu.
+     * Jokoaren datuak XML fitxategitik kargatzen ditu.
      *
-     * @return Jokoa objektua
+     * JAXB erabiliz jokoa.xml fitxategia irakurtzen da eta haren edukia Jokoa objektu batean mapatzen da.
+     *
+     * @return XML fitxategitik kargatutako Jokoa objektua
      */
     public Jokoa kargatuJokoa() {
         try {

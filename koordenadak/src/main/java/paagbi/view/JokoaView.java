@@ -41,9 +41,11 @@ public class JokoaView extends JFrame {
     private JLabel lblKoordenatuak;
     private JLabel lblLatitude;
     private JLabel lblLongitude;
+    private JLabel lblArriskuEremua;
     private JLabel lblArriskuLat;
     private JLabel lblArriskuLon;
     private JLabel lblGaldera;
+    private JLabel lblGaldera2;
     private JLabel lblEmaitza;
     private JLabel lblPuntuak;
 
@@ -54,6 +56,8 @@ public class JokoaView extends JFrame {
     private JButton btnEz;
     private JButton btnJson;
     private JButton btnIrten;
+    private JButton btnHurrengoa;
+    private JButton btnHurrengoa3;
 
     /**
      * Jokoaren leiho nagusia sortzen du eta aukeratutako joko motaren arabera interfazea prestatzen du.
@@ -87,7 +91,7 @@ public class JokoaView extends JFrame {
         // Panel general
         JPanel pnlJokoa = new JPanel();
         pnlJokoa.setLayout(null);
-        pnlJokoa.setBounds(20, 70, 280, 450);
+        pnlJokoa.setBounds(20, 70, 350, 480);
         pnlJokoa.setBackground(Color.WHITE);
         pnlJokoa.setBorder(BorderFactory.createTitledBorder("Jokoa"));
 
@@ -100,92 +104,109 @@ public class JokoaView extends JFrame {
         lblKoordenatuak.setFont(new Font("Arial", Font.BOLD, 16));
         lblKoordenatuak.setBounds(20, 60, 240, 25);
 
-        // Latitude
+        // Latitud
         lblLatitude = new JLabel();
         lblLatitude.setBounds(20, 95, 240, 25);
 
-        // Longitude
+        // Longitud
         lblLongitude = new JLabel();
         lblLongitude.setBounds(20, 120, 240, 25);
 
         // Límites del área de riesgo
+        lblArriskuEremua = new JLabel();
+        lblArriskuEremua.setBounds(20, 150, 240, 25);
         lblArriskuLat = new JLabel();
-        lblArriskuLat.setBounds(20, 150, 240, 25);
-
+        lblArriskuLat.setBounds(20, 175, 240, 25);
         lblArriskuLon = new JLabel();
-        lblArriskuLon.setBounds(20, 175, 240, 25);
+        lblArriskuLon.setBounds(20, 200, 240, 25);
 
         // Pregunta
         lblGaldera = new JLabel();
         lblGaldera.setBounds(20, 210, 240, 25);
+        lblGaldera2 = new JLabel();
+        lblGaldera2.setBounds(20, 235, 240, 25);
 
         // Combo de localidades
         cmbKokalekuak = new JComboBox<>();
-        cmbKokalekuak.setBounds(20, 245, 220, 30);
+        cmbKokalekuak.setBounds(20, 245, 290, 30);
 
         // Botón comprobar
         btnEgiaztatu = new JButton("Egiaztatu");
-        btnEgiaztatu.setBounds(20, 290, 150, 35);
-        btnEgiaztatu.setBackground(new Color(0, 153, 76));
-        btnEgiaztatu.setForeground(Color.WHITE);
+        btnEgiaztatu.setBounds(20, 290, 140, 35);
+        btnEgiaztatu.setBackground(new Color(135, 206, 235));
+        btnEgiaztatu.setForeground(new Color(50,50,50));
 
         // Botón BAI
         btnBai = new JButton("BAI");
-        btnBai.setBounds(20, 250, 100, 35);
-        btnBai.setBackground(new Color(0, 153, 76));
-        btnBai.setForeground(Color.WHITE);
+        btnBai.setBounds(20, 275, 100, 35);
+        btnBai.setBackground(new Color(168, 218, 181));
+        btnBai.setForeground(new Color(50,50,50));
+        btnBai.setFocusable(false);
 
         // Botón EZ
         btnEz = new JButton("EZ");
-        btnEz.setBounds(140, 250, 100, 35);
-        btnEz.setBackground(new Color(204, 0, 0));
-        btnEz.setForeground(Color.WHITE);
+        btnEz.setBounds(140, 275, 100, 35);
+        btnEz.setBackground(new Color(240, 190, 190));
+        btnEz.setForeground(new Color(50,50,50));
+        btnEz.setFocusable(false);
 
-        // Por defecto no mostramos BAI / EZ
-        btnBai.setVisible(false);
-        btnEz.setVisible(false);
+        //Botón hurrengo galdera
+        btnHurrengoa = new JButton("Hurrengo galdera");
+        btnHurrengoa.setBounds(170, 290, 140, 35);
+        btnHurrengoa.setBackground(new Color(135, 206, 235));
+        btnHurrengoa.setForeground(new Color(50,50,50));     
+
+        //Botón hurrengoa juego 3
+        btnHurrengoa3 = new JButton("Hurrengo galdera");
+        btnHurrengoa3.setBounds(40, 315, 180, 40);
+        btnHurrengoa3.setBackground(new Color(135, 206, 235));
+        btnHurrengoa3.setForeground(new Color(50,50,50));  
 
         // Resultado
         lblEmaitza = new JLabel("Emaitza:");
-        lblEmaitza.setBounds(20, 350, 250, 25);
+        lblEmaitza.setBounds(20, 375, 250, 25);
 
         // Puntos
         lblPuntuak = new JLabel("Puntuak: 0");
         lblPuntuak.setFont(new Font("Arial", Font.BOLD, 16));
-        lblPuntuak.setBounds(20, 390, 200, 25);
+        lblPuntuak.setBounds(20, 415, 200, 25);
 
         // Añadimos todo al panel izquierdo
         pnlJokoa.add(lblJokalaria);
         pnlJokoa.add(lblKoordenatuak);
         pnlJokoa.add(lblLatitude);
         pnlJokoa.add(lblLongitude);
+        pnlJokoa.add(lblArriskuEremua);
         pnlJokoa.add(lblArriskuLat);
         pnlJokoa.add(lblArriskuLon);
         pnlJokoa.add(lblGaldera);
+        pnlJokoa.add(lblGaldera2);
         pnlJokoa.add(cmbKokalekuak);
         pnlJokoa.add(btnEgiaztatu);
         pnlJokoa.add(btnBai);
         pnlJokoa.add(btnEz);
         pnlJokoa.add(lblEmaitza);
         pnlJokoa.add(lblPuntuak);
+        pnlJokoa.add(btnHurrengoa);
+        pnlJokoa.add(btnHurrengoa3);
 
         // Mapa
         ImageIcon original = new ImageIcon(getClass().getResource("/img/mapa.jpg"));
-        Image escalada = original.getImage().getScaledInstance(620, 480, Image.SCALE_SMOOTH);
+        Image escalada = original.getImage().getScaledInstance(520, 480, Image.SCALE_SMOOTH);
         JLabel lblMapa = new JLabel(new ImageIcon(escalada));
-        lblMapa.setBounds(330, 70, 620, 480);
+        lblMapa.setBounds(400, 70, 520, 480);
 
         // Botón exportar JSON
         btnJson = new JButton("JSON esportatu");
         btnJson.setBounds(580, 560, 180, 35);
-        btnJson.setBackground(new Color(0, 102, 204));
-        btnJson.setForeground(Color.WHITE);
+        btnJson.setBackground(new Color(135, 206, 235));
+        btnJson.setForeground(new Color(50,50,50));
 
-        // Botón salir
-        btnIrten = new JButton("Irten");
+        // Botón volver
+        btnIrten = new JButton("Atzera");
         btnIrten.setBounds(800, 560, 120, 35);
-        btnIrten.setBackground(new Color(204, 0, 0));
-        btnIrten.setForeground(Color.WHITE);
+        btnIrten.setBackground(new Color(221, 160, 221));
+        btnIrten.setForeground(new Color(50,50,50));
 
         panel.add(lblTitulo);
         panel.add(pnlJokoa);
@@ -208,6 +229,17 @@ public class JokoaView extends JFrame {
         btnEgiaztatu.addActionListener(e -> egiaztatu());
         btnBai.addActionListener(e -> arriskuaEgiaztatu(true));
         btnEz.addActionListener(e -> arriskuaEgiaztatu(false));
+        btnHurrengoa.addActionListener(e -> {
+            galderaBerria();
+            btnEgiaztatu.setEnabled(true);
+        });
+        btnHurrengoa3.addActionListener(e -> {
+            galderaBerria();
+            btnBai.setEnabled(true);
+            btnEz.setEnabled(true);
+
+        });
+
 
         btnJson.addActionListener(e -> {
             Puntuazioa puntuazioa = new Puntuazioa(jokalaria, puntuak);
@@ -215,7 +247,11 @@ public class JokoaView extends JFrame {
             lblEmaitza.setForeground(new Color(0, 102, 204));
             lblEmaitza.setText("JSON fitxategia sortu da");
         });
-        btnIrten.addActionListener(e -> System.exit(0));
+        btnIrten.addActionListener(e -> {
+            dispose();
+            HasieraView view = new HasieraView();
+            view.setVisible(true);
+        });
     }
 
 
@@ -227,6 +263,8 @@ public class JokoaView extends JFrame {
         if (jokoMota == 1) {
             cmbKokalekuak.setVisible(true);
             btnEgiaztatu.setVisible(true);
+            btnHurrengoa.setVisible(true);
+            btnHurrengoa3.setVisible(false);
             btnBai.setVisible(false);
             btnEz.setVisible(false);
             lblArriskuLat.setVisible(false);
@@ -235,6 +273,8 @@ public class JokoaView extends JFrame {
         else if (jokoMota == 2) {
             cmbKokalekuak.setVisible(true);
             btnEgiaztatu.setVisible(true);
+            btnHurrengoa.setVisible(true);
+            btnHurrengoa3.setVisible(false);
             btnBai.setVisible(false);
             btnEz.setVisible(false);
             lblArriskuLat.setVisible(false);
@@ -243,6 +283,8 @@ public class JokoaView extends JFrame {
         else if (jokoMota == 3) {
             cmbKokalekuak.setVisible(false);
             btnEgiaztatu.setVisible(false);
+            btnHurrengoa.setVisible(false);
+            btnHurrengoa3.setVisible(true);
             btnBai.setVisible(true);
             btnEz.setVisible(true);
             lblArriskuLat.setVisible(true);
@@ -286,10 +328,11 @@ public class JokoaView extends JFrame {
             lblLongitude.setText("Longitude: "+ kokalekuaZuzena.getKoordenatua().getLongitude());
             // Límites del área de riesgo
             if (eremua != null) {
-                lblArriskuLat.setText("Arrisku Lat: "+ eremua.getLatMin()+ " - "+ eremua.getLatMax());
-                lblArriskuLon.setText("Arrisku Lon: "+ eremua.getLonMin()+ " - "+ eremua.getLonMax());
+                lblArriskuEremua.setText("Arrisku eremua:");
+                lblArriskuLat.setText("Latitudea: "+ eremua.getLatMin()+ " - "+ eremua.getLatMax());
+                lblArriskuLon.setText("Longitudea: "+ eremua.getLonMin()+ " - "+ eremua.getLonMax());
             }
-            lblGaldera.setText("Arrisku eremuan dago?");
+            lblGaldera2.setText("Arrisku eremuan dago?");
         }
     }
 
@@ -303,7 +346,7 @@ public class JokoaView extends JFrame {
             hurbilenaEgiaztatu();
         }
         lblPuntuak.setText("Puntuak: " + puntuak);
-        galderaBerria();
+        btnEgiaztatu.setEnabled(false);
     }
 
     /**
@@ -314,10 +357,10 @@ public class JokoaView extends JFrame {
         boolean zuzena = controller.egiaztatuErantzuna(kokalekuaZuzena,erantzuna);
         if (zuzena) {
             puntuak += 10;
-            lblEmaitza.setForeground(new Color(0, 120, 0));
+            lblEmaitza.setForeground(new Color(74, 124, 89));
             lblEmaitza.setText("ZUZENA");
         } else {
-            lblEmaitza.setForeground(Color.RED);
+            lblEmaitza.setForeground(new Color(186, 104, 104));
             lblEmaitza.setText("OKERRA. Zuzena: "+ kokalekuaZuzena.getIzena());
         }
     }
@@ -366,7 +409,8 @@ public class JokoaView extends JFrame {
             }
         }
         lblPuntuak.setText("Puntuak: " + puntuak);
-        galderaBerria();
+        btnBai.setEnabled(false);
+        btnEz.setEnabled(false);
     }
 
     /**
