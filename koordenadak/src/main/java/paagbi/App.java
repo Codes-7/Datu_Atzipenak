@@ -1,4 +1,5 @@
 package paagbi;
+import paagbi.view.HasieraView;
 
 /**
  * 
@@ -6,8 +7,8 @@ package paagbi;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main( String[] args ){
+        HasieraView view = new HasieraView();
+        view.setVisible(true);
     }
 }

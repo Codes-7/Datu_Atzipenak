@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jokoa>
+    <kokalekuak>
+        <kokalekua id="1">
+            <izena>Bilbao</izena>
+            <koordenatua>
+                <latitude>43.2630</latitude>
+                <longitude>-2.9350</longitude>
+            </koordenatua>
+        </kokalekua>
+        <kokalekua id="2">
+            <izena>Donostia</izena>
+            <koordenatua>
+                <latitude>43.3183</latitude>
+                <longitude>-1.9812</longitude>
+            </koordenatua>
+        </kokalekua>
+        <kokalekua id="3">
+            <izena>Gasteiz</izena>
+            <koordenatua>
+                <latitude>42.8467</latitude>
+                <longitude>-2.6716</longitude>
+            </koordenatua>
+        </kokalekua>
+        <kokalekua id="4">
+            <izena>Irun</izena>
+            <koordenatua>
+                <latitude>43.3390</latitude>
+                <longitude>-1.7894</longitude>
+            </koordenatua>
+        </kokalekua>
+        <kokalekua id="5">
+            <izena>Gernika</izena>
+            <koordenatua>
+                <latitude>43.3160</latitude>
+                <longitude>-2.6790</longitude>
+            </koordenatua>
+        </kokalekua>
+    </kokalekuak>
+    <arriskuEremuak>
+        <arriskuEremua id="1">
+            <izena>Mendebaldeko Eremua</izena>
+            <latMin>43.20</latMin>
+            <latMax>43.35</latMax>
+            <lonMin>-2.98</lonMin>
+            <lonMax>-2.60</lonMax>
+        </arriskuEremua>
+    </arriskuEremuak>
+</jokoa>
